@@ -104,3 +104,53 @@ Components are generated with SCSS by default (set in `angular.json` schematics)
 ### Linting
 
 ESLint is configured with `angular-eslint` covering both `.ts` and `.html` files. Template accessibility rules are enabled. Run `npm run lint -- --fix` for auto-fixable issues.
+
+## Design System — Artisanal Ether
+
+Brand personality: tactile craftsmanship meets ethereal beauty. Target audience values slow fashion, intentionality, and handmade imperfection. The UI is gallery-like — it recedes to let product photography dominate. Every interaction should feel deliberate and soft, mimicking polished resin. Style blend: **Minimalism + Tactile Sophistication**.
+
+Tailwind v4 tokens are defined in `src/tailwind.css` via `@theme`. Fonts (Noto Serif + Manrope) are loaded via `<link>` in `src/index.html`.
+
+### Colors
+
+Material Design 3 tonal palette. Key roles:
+
+| Role | Token | Use |
+|------|-------|-----|
+| Page canvas | `bg-surface` | Warm off-white (#fff8f4), main background |
+| Card / highlight | `bg-surface-container-lowest` | Pure white, product cards |
+| Borders / dividers | `border-outline-variant` | Soft taupe (#d0c4bc), 1px solid |
+| Body text | `text-on-surface` | Charcoal-brown (#1f1b18), high contrast |
+| Secondary text | `text-on-surface-variant` | Muted brown (#4d453f) |
+| CTA / primary action | `bg-primary` | Warm brown (#685c52) |
+| Primary text on dark | `text-on-primary` | White |
+| Accent / chip fill | `bg-primary-container` | Blush (#f5e4d7) |
+
+Avoid heavy shadows. Use `border border-outline-variant` (1px) to define component boundaries. When elevation is needed (modals, floating cart) use: `shadow-[0_12px_32px_rgba(74,69,65,0.05)]`.
+
+### Typography
+
+| Scale | Tailwind class | Font | Use |
+|-------|---------------|------|-----|
+| h1 | `text-h1 font-serif tracking-h1` | Noto Serif 48px | Hero headlines |
+| h2 | `text-h2 font-serif tracking-h2` | Noto Serif 32px | Section titles |
+| h3 | `text-h3 font-serif` | Noto Serif 24px | Sub-sections |
+| body-lg | `text-body-lg font-sans` | Manrope 18px | Lead paragraphs |
+| body-md | `text-body-md font-sans` | Manrope 16px | Body copy |
+| label-sm | `text-label-sm font-sans font-semibold tracking-label uppercase` | Manrope 12px | Chips, field labels, tags |
+
+### Spacing
+
+Named spacing tokens: `xs` (8px), `sm` (16px), `md` (24px), `lg` (48px), `xl` (80px), `gutter` (24px), `margin-safe` (32px). Favor `lg` and `xl` gaps between major sections to achieve the airy, minimalist rhythm.
+
+Layout: 12-column fixed grid, 1200px max-width desktop. Storytelling sections → centered. Shopping/functional UI → left-aligned.
+
+### Components
+
+- **Buttons (primary):** `bg-on-surface text-surface rounded px-sm py-xs transition-all duration-300` — solid dark with white text. Slow 300ms transitions.
+- **Buttons (secondary):** Transparent background, `border border-outline-variant rounded`, same slow transition.
+- **Input fields:** `border-b border-outline-variant` or full 4-sided border. Labels: `text-label-sm uppercase tracking-label` above the field.
+- **Product cards:** `bg-surface-container-lowest rounded-lg` — white fill, no border, separated by whitespace or `bg-primary-container` tint. Generous internal padding.
+- **Chips / Tags:** `rounded-full bg-primary-container text-label-sm` — pill-shaped, no border, light fill.
+- **Navigation:** Centered persistent header, `bg-surface/80 backdrop-blur-[10px]`.
+- **Images:** All product photography uses warm-tone treatment. Always use `NgOptimizedImage`.
