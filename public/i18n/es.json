@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "shop": "Tienda",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "cart": "Carrito"
+  },
+  "hero": {
+    "headline": "Arte en Resina Artesanal",
+    "subheadline": "Cada pieza es una expresión única — moldeada a mano, sellada en el tiempo.",
+    "cta": "Explorar la Colección"
+  },
+  "products": {
+    "title": "La Colección",
+    "subtitle": "Objetos hechos con calma para una vida intencional.",
+    "addToCart": "Agregar al Carrito",
+    "outOfStock": "Sin Stock",
+    "details": "Ver Detalles",
+    "new": "Nuevo",
+    "soldOut": "Agotado"
+  },
+  "cart": {
+    "title": "Tu Carrito",
+    "empty": "Tu carrito está vacío.",
+    "continueShopping": "Seguir Comprando",
+    "subtotal": "Subtotal",
+    "checkout": "Proceder al Pago",
+    "remove": "Eliminar",
+    "quantity": "Cant."
+  },
+  "about": {
+    "title": "Sobre el Estudio",
+    "body": "Cada pieza comienza como una idea — un color, una sensación, una textura encontrada en la naturaleza. Vertimos, curamos y terminamos cada artículo a mano en nuestro pequeño estudio."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Gracias! Nos pondremos en contacto pronto.",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+  },
+  "common": {
+    "loading": "Cargando…",
+    "backToTop": "Volver arriba",
+    "learnMore": "Saber más",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "currency": "USD"
+  },
+  "footer": {
+    "tagline": "Hecho a mano con intención.",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  }
+}
