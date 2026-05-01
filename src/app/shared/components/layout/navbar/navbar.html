@@ -1,0 +1,97 @@
+<nav
+  class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/40 transition-all duration-300"
+>
+  <div class="flex justify-between items-center px-8 md:px-12 h-20 max-w-content mx-auto">
+    <!-- Logo -->
+    <a
+      routerLink="/"
+      class="text-2xl font-serif italic text-on-surface tracking-tight"
+      (click)="closeMenu()"
+    >
+      Resin Craft Art
+    </a>
+
+    <!-- Links desktop -->
+    <div class="hidden md:flex items-center gap-8">
+      @for (link of links; track link.route) {
+        <a
+          [routerLink]="link.route"
+          routerLinkActive="border-b border-on-surface text-on-surface"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="font-label-sm text-on-surface-variant hover:text-on-surface transition-colors duration-300 pb-px"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </div>
+
+    <!-- Acciones -->
+    <div class="flex items-center gap-4">
+      <!-- Icono carrito (por implementar en fase 4) -->
+      <button
+        class="text-on-surface hover:text-primary transition-colors duration-300"
+        aria-label="Carrito de compra"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+          />
+        </svg>
+      </button>
+
+      <!-- Hamburger mobile -->
+      <button class="md:hidden text-on-surface" aria-label="Abrir menú" (click)="toggleMenu()">
+        @if (menuOpen()) {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        } @else {
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú mobile -->
+  @if (menuOpen()) {
+    <div
+      class="md:hidden bg-surface border-t border-outline-variant/40 px-8 py-md flex flex-col gap-md"
+    >
+      @for (link of links; track link.route) {
+        <a
+          [routerLink]="link.route"
+          routerLinkActive="text-on-surface"
+          class="font-label-sm text-on-surface-variant hover:text-on-surface transition-colors duration-300 py-xs"
+          (click)="closeMenu()"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </div>
+  }
+</nav>
