@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
+  "hero": {
+    "headline": "Handcrafted Resin Art",
+    "subheadline": "Each piece is a unique expression — shaped by hand, sealed in time.",
+    "cta": "Explore the Collection"
+  },
+  "products": {
+    "title": "The Collection",
+    "subtitle": "Slow-made objects for intentional living.",
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "details": "View Details",
+    "new": "New",
+    "soldOut": "Sold Out"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty.",
+    "continueShopping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "quantity": "Qty"
+  },
+  "about": {
+    "title": "About the Studio",
+    "body": "Every piece begins as an idea — a color, a feeling, a texture found in nature. We pour, cure, and finish each item by hand in our small studio."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Thank you! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again."
+  },
+  "common": {
+    "loading": "Loading…",
+    "backToTop": "Back to top",
+    "learnMore": "Learn more",
+    "close": "Close",
+    "open": "Open",
+    "currency": "USD"
+  },
+  "footer": {
+    "tagline": "Handmade with intention.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
