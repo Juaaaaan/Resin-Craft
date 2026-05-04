@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(ng generate *)",
+      "Bash(ng build *)",
+      "Bash(npx ng *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Bash(git push *)",
+      "Bash(npm publish *)",
+      "Bash(rm -rf *)"
+    ]
+  },
+  "env": {
+    "ANGULAR_CLI_ANALYTICS": "false"
+  }
+}
