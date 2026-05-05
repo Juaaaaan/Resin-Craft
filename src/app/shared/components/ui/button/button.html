@@ -1,4 +1,10 @@
-<button [type]="type()" [class]="classes" [disabled]="disabled() || loading()" (click)="onClick()">
+<button
+  [type]="type()"
+  [class]="classes()"
+  [disabled]="disabled() || loading()"
+  [attr.aria-busy]="loading() || null"
+  (click)="onClick()"
+>
   @if (loading()) {
     <svg
       class="animate-spin h-4 w-4"
