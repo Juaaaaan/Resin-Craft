@@ -1,0 +1,57 @@
+@if (isOpen()) {
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center"
+    (keydown)="onKeydown($event)"
+    (click)="onBackdropClick($event)"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="title()"
+  >
+    <!-- Backdrop -->
+    <div
+      class="absolute inset-0 bg-inverse-surface/20 backdrop-blur-sm transition-opacity duration-300"
+    ></div>
+
+    <!-- Panel -->
+    <div cdkTrapFocus cdkTrapFocusAutoCapture [class]="panelClasses">
+      <!-- Header -->
+      @if (title() || closeable()) {
+        <div
+          class="flex items-center justify-between px-lg py-md border-b border-outline-variant shrink-0"
+        >
+          @if (title()) {
+            <h2 class="font-h3 text-on-surface">{{ title() }}</h2>
+          }
+          @if (closeable()) {
+            <button
+              class="ml-auto text-on-surface-variant hover:text-on-surface transition-colors duration-300 p-xs"
+              aria-label="Cerrar"
+              (click)="close()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          }
+        </div>
+      }
+
+      <!-- Body -->
+      <div class="overflow-y-auto px-lg py-md flex-1">
+        <ng-content />
+      </div>
+
+      <!-- Footer (slot opcional) -->
+      <div class="px-lg py-md border-t border-outline-variant shrink-0 empty:hidden">
+        <ng-content select="[modal-footer]" />
+      </div>
+    </div>
+  </div>
+}
