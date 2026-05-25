@@ -1,0 +1,62 @@
+<div class="flex flex-col gap-xs w-full">
+  @if (label()) {
+    <span class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-xs">
+      {{ label() }}
+      @if (required()) {
+        <span class="text-error ml-1" aria-hidden="true">*</span>
+      }
+    </span>
+  }
+
+  <div
+    [class]="groupClasses"
+    role="radiogroup"
+    [attr.aria-label]="label()"
+    [attr.aria-required]="required()"
+  >
+    @for (option of options(); track option.value) {
+      <label
+        class="flex items-start gap-sm cursor-pointer group"
+        [class.opacity-40]="isDisabled(option)"
+        [class.pointer-events-none]="isDisabled(option)"
+      >
+        <!-- Input nativo oculto — accesibilidad correcta -->
+        <input
+          type="radio"
+          [name]="name()"
+          [value]="option.value"
+          [checked]="isSelected(option.value)"
+          [disabled]="isDisabled(option)"
+          class="sr-only peer"
+          (change)="onChange(option.value)"
+        />
+
+        <!-- Radio visual custom -->
+        <span
+          class="mt-px shrink-0 w-5 h-5 rounded-full border border-outline-variant transition-all duration-300 peer-checked:border-primary peer-checked:border-[5px] peer-focus-visible:ring-2 peer-focus-visible:ring-primary/30 group-hover:border-primary"
+        >
+        </span>
+
+        <!-- Label + descripción -->
+        <span class="flex flex-col">
+          <span
+            class="font-body-md text-on-surface transition-colors duration-300 peer-checked:text-on-surface group-hover:text-on-surface"
+          >
+            {{ option.label }}
+          </span>
+          @if (option.description) {
+            <span class="font-label-sm text-on-surface-variant mt-xs">
+              {{ option.description }}
+            </span>
+          }
+        </span>
+      </label>
+    }
+  </div>
+
+  @if (error()) {
+    <span class="font-label-sm text-error" role="alert">{{ error() }}</span>
+  } @else if (hint()) {
+    <span class="font-label-sm text-on-surface-variant">{{ hint() }}</span>
+  }
+</div>
