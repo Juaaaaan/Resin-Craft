@@ -9,6 +9,8 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideTransloco } from '@jsverse/transloco';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
 
 import { routes } from './app.routes';
 import { TranslocoHttpLoader } from './core/services/transloco/transloco-loader';
@@ -16,6 +18,10 @@ import { LangDetectorService } from './core/services/transloco/lang-detector.ser
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    {
+      provide: 'APP_INIT',
+      useValue: registerLocaleData(localeEs),
+    },
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),

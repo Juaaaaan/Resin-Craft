@@ -1,0 +1,69 @@
+<section class="py-xl bg-surface-container-lowest">
+  <div class="max-w-content mx-auto px-margin-safe">
+    <!-- Título -->
+    <div class="flex flex-col items-center mb-lg">
+      <h2 class="text-h2 font-serif text-on-surface text-center mb-sm">The Elements</h2>
+      <div class="w-12 h-px bg-outline-variant"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div
+      class="flex flex-wrap justify-center gap-md md:gap-lg mb-xl border-b border-outline-variant"
+    >
+      @for (tab of tabs; track tab.slug) {
+        <button
+          class="pb-base font-label-sm transition-colors duration-300 cursor-pointer"
+          [class.text-on-surface]="activeTab() === tab.slug"
+          [class.border-b-2]="activeTab() === tab.slug"
+          [class.border-primary]="activeTab() === tab.slug"
+          [class.text-on-surface-variant]="activeTab() !== tab.slug"
+          [class.hover:text-on-surface]="activeTab() !== tab.slug"
+          (click)="setActive(tab.slug)"
+        >
+          {{ tab.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <!-- Feature principal -->
+      <div
+        class="md:col-span-8 group cursor-pointer relative overflow-hidden h-125"
+        [routerLink]="['/stock']"
+        [queryParams]="{ categoria: activeTab() }"
+      >
+        <div class="w-full h-full bg-surface-container-high flex items-center justify-center">
+          <img src="images/home/rc-most_earrings.png" alt="" class="w-full h-full object-cover" />
+        </div>
+        <div
+          class="absolute inset-0 bg-on-surface/5 transition-opacity group-hover:opacity-20"
+        ></div>
+        <div class="absolute bottom-lg left-lg">
+          <span
+            class="font-label-sm text-white bg-on-surface/40 backdrop-blur-md px-sm py-xs mb-xs inline-block"
+          >
+            MÁS VENDIDO
+          </span>
+          <h3 class="text-h3 font-serif text-white drop-shadow-sm">Botanical Series</h3>
+        </div>
+      </div>
+
+      <!-- Feature secundario -->
+      <div
+        class="md:col-span-4 group cursor-pointer relative overflow-hidden h-125"
+        [routerLink]="['/colecciones']"
+      >
+        <div class="w-full h-full bg-surface-container flex items-center justify-center">
+          <img src="images/home/rc-most_rings.png" alt="" class="w-full h-full object-cover" />
+        </div>
+        <div
+          class="absolute inset-0 bg-on-surface/5 transition-opacity group-hover:opacity-20"
+        ></div>
+        <div class="absolute bottom-lg left-lg">
+          <h3 class="text-h3 font-serif text-white drop-shadow-sm">Geometric Clarity</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
