@@ -1,0 +1,11 @@
+<div id="rc-home">
+  <app-hero
+    (shopCollections)="router.navigate(['/colecciones'])"
+    (ourStory)="router.navigate(['/contacto'])"
+  />
+  <app-category-tabs />
+  <!-- <app-featured-products (addToBag)="onAddToBag($event)" /> -->
+  <app-featured-products />
+
+  <app-brand-story />
+</div>

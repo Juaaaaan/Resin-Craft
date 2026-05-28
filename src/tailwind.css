@@ -3,6 +3,12 @@
 @theme {
   /* ── Colors (Material Design 3 tonal palette — "Artisanal Ether") ── */
 
+  /* Navbar */
+  --color-navbar: #fbfaf8;
+
+  /* Footer */
+  --color-footer: #fbfaf8;
+
   /* Surface */
   --color-surface: #fff8f4;
   --color-surface-dim: #e1d8d3;

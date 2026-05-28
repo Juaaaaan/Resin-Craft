@@ -1,0 +1,37 @@
+<section class="relative h-dvh flex flex-col md:flex-row overflow-hidden">
+  <!-- Imagen -->
+  <div class="w-full md:w-1/2 md:h-dvh relative bg-surface-container-low">
+    <img
+      src="images/home/rc-hero-background.png"
+      alt="Handcrafted resin jewelry by Resin Craft Art"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-linear-to-r from-surface/20 to-transparent"></div>
+  </div>
+
+  <!-- Texto -->
+  <div class="w-full md:w-1/2 px-8 md:px-xl py-lg bg-surface flex flex-col justify-center">
+    <div class="">
+      <span class="font-label-sm text-primary mb-sm block uppercase tracking-widest">
+        Handcrafted Intention
+      </span>
+
+      <h1 class="text-h1 font-serif text-on-surface mb-md">
+        Wearable <em class="italic">Ethereal</em> Beauty
+      </h1>
+
+      <p class="text-body-lg text-on-surface-variant mb-lg leading-relaxed">
+        Soy una artesana autodidacta que encontró la paz en el ritmo fluido del trabajo con resina.
+        Cada pieza es una meditación, capturando la quieta elegancia de las imperfecciones de la
+        naturaleza dentro de formas cristalinas y pulidas.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-md">
+        <app-button (clicked)="shopCollections.emit()" routerLink="/colecciones">
+          VER COLECCIONES
+        </app-button>
+        <app-button variant="secondary" routerLink="/contacto"> NUESTRA HISTORIA </app-button>
+      </div>
+    </div>
+  </div>
+</section>
