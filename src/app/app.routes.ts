@@ -11,6 +11,12 @@ export const routes: Routes = [
         pathMatch: 'full',
         loadComponent: () => import('./features/home/home').then((m) => m.Home),
       },
+      {
+        path: 'colecciones',
+        pathMatch: 'full',
+        loadComponent: () =>
+          import('./features/collections/collections').then((m) => m.Collections),
+      },
     ],
   },
   { path: '**', redirectTo: '' },

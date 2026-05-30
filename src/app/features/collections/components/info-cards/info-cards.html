@@ -1,0 +1,11 @@
+<ng-container *transloco="let t">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-16">
+    @for (card of cards; track $index) {
+      <div class="p-8 bg-surface-container-low rounded-lg text-center flex flex-col gap-4">
+        <img [src]="card.icon" alt="Icon {{ card.title }}" class="w-12 h-12 mx-auto" />
+        <h3 class="text-h3">{{ t(card.title) }}</h3>
+        <p class="font-light text-sm text-on-surface-variant">{{ t(card.description) }}</p>
+      </div>
+    }
+  </div>
+</ng-container>
