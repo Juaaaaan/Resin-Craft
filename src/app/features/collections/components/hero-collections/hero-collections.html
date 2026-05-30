@@ -1,0 +1,85 @@
+<ng-container *transloco="let t" id="rc-collections-hero">
+  <!-- <main class="bg-surface-container-low p-16"> -->
+  <main class="p-16">
+    <section class="relative h-dvh flex flex-col overflow-hidden md:flex-row">
+      <!-- image -->
+      <div class="w-full md:w-1/3 md:h-dvh relative bg-transparent">
+        <img
+          src="images/home/rc-hero-background.png"
+          alt="Handcrafted resin jewelry by Resin Craft Art"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- text -->
+      <div class="w-full md:w-2/3 px-8 md:px-xl py-lg bg-transparent flex flex-col justify-center">
+        <div>
+          <span class="font-label-sm text-primary mb-sm block uppercase tracking-widest">
+            {{ t('collections.hero.chapters.first.tag') }}
+          </span>
+
+          <h1 class="text-h1 font-serif text-on-surface mb-md">
+            {{ t('collections.hero.chapters.first.title') }}
+          </h1>
+
+          <p class="text-body-lg text-on-surface-variant mb-lg leading-relaxed">
+            {{ t('collections.hero.chapters.first.description') }}
+          </p>
+
+          <ul class="mb-lg list-disc marker:text-primary pl-3">
+            <li>{{ t('collections.hero.chapters.first.types.minerals') }}</li>
+            <li>{{ t('collections.hero.chapters.first.types.ingredients') }}</li>
+          </ul>
+
+          <div class="flex flex-col sm:flex-row gap-md">
+            <app-button variant="secondary">{{
+              t('collections.hero.chapters.first.button')
+            }}</app-button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="relative h-dvh flex flex-col overflow-hidden mb-8 md:flex-row-reverse">
+      <!-- image -->
+      <div class="w-full md:w-1/3 md:h-dvh relative bg-transparent">
+        <img
+          src="images/collections/rc-collections-header.png"
+          alt="Handcrafted resin jewelry by Resin Craft Art"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- text -->
+      <div class="w-full md:w-2/3 px-8 md:px-xl py-lg bg-transparent flex flex-col justify-center">
+        <div class="">
+          <span class="font-label-sm text-primary mb-sm block uppercase tracking-widest">
+            {{ t('collections.hero.chapters.second.tag') }}
+          </span>
+
+          <h1 class="text-h1 font-serif text-on-surface mb-md">
+            {{ t('collections.hero.chapters.second.title') }}
+          </h1>
+
+          <p class="text-body-lg text-on-surface-variant mb-lg leading-relaxed">
+            {{ t('collections.hero.chapters.second.description') }}
+          </p>
+          <div class="flex gap-md mb-lg">
+            <div class="bg-surface-container-low  text-sm p-4 rounded-xs">
+              <span>{{ t('collections.hero.chapters.second.characteristics.made') }}</span>
+            </div>
+            <div class="bg-surface-container-low  text-sm p-4 rounded-xs">
+              <span>{{ t('collections.hero.chapters.second.characteristics.resistance') }}</span>
+            </div>
+            <div class="bg-surface-container-low  text-sm p-4 rounded-xs">
+              <span>{{ t('collections.hero.chapters.second.characteristics.typo') }}</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-md">
+            <app-button variant="secondary">{{ t('collections.hero.chapters.second.button') }}</app-button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</ng-container>

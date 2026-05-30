@@ -31,7 +31,7 @@ export class ButtonComponent {
 
   readonly classes = computed(() => {
     const base =
-      'inline-flex items-center justify-center gap-xs rounded font-sans font-semibold tracking-label uppercase transition-all duration-300 disabled:opacity-40 disabled:pointer-events-none';
+      'inline-flex items-center cursor-pointer justify-center gap-xs rounded font-sans font-semibold tracking-label uppercase transition-all duration-300 disabled:opacity-40 disabled:pointer-events-none';
     return `${base} ${this.variantClasses[this.variant()]} ${this.sizeClasses[this.size()]}`;
   });
 

@@ -28,6 +28,54 @@
     "remove": "Remove",
     "quantity": "Qty"
   },
+
+  "collections": {
+    "title_section": {
+      "series": "The 2026 Series",
+      "title": "Selected Collections",
+      "subtitle": "A celebration of suspended moments, where organic forms merge with the fluid transparency of high-quality resin."
+    },
+    "hero": {
+      "chapters": {
+        "first": {
+          "tag": "Chapter I",
+          "title": "Ethereal Petals",
+          "description": "Inspired by the ephemeral beauty of spring, this collection captures the delicate pulse of plant life. Each piece features a single hand-selected flower, preserved forever in a crystal embrace.",
+          "types": {
+            "minerals": "Gold-plated silver",
+            "ingredients": "Conserved botanical ingredients"
+          },
+          "button": "Explore Ethereal Petals"
+        },
+        "second": {
+          "tag": "Chapter II",
+          "title": "Ocean Depths",
+          "description": "Intense cerulean pigments blend with translucent layers to mimic the rhythmic movement of the tide. A collection designed for those who find peace in the vastness of the sea.",
+          "characteristics": {
+            "made": "Handcrafted",
+            "resistance": "UV resistant",
+            "typo": "Unique Swirls"
+          },
+          "button": "Explore Ocean Depths"
+        }
+      }
+    },
+    "info_cards": {
+      "first": {
+        "title": "Artisan Grade",
+        "description": "Non-yellowing, high-clarity resin that protects the integrity of your pieces for years."
+      },
+      "second": {
+        "title": "Selected Collections",
+        "description": "We source our botanicals from local sustainable gardens and use bio-based resin components."
+      },
+      "third": {
+        "title": "One of a Kind",
+        "description": "Due to the hand-poured nature of resin, no two pieces will ever be identical."
+      }
+    }
+  },
+
   "about": {
     "title": "About the Studio",
     "body": "Every piece begins as an idea — a color, a feeling, a texture found in nature. We pour, cure, and finish each item by hand in our small studio."

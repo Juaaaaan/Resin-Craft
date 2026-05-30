@@ -28,6 +28,54 @@
     "remove": "Eliminar",
     "quantity": "Cant."
   },
+
+  "collections": {
+    "title_section": {
+      "series": "Series de 2026",
+      "title": "Colecciones seleccionadas",
+      "subtitle": "Una celebración de momentos suspendidos, en la que las formas orgánicas se funden con la transparencia fluida de la resina de alta calidad."
+    },
+    "hero": {
+      "chapters": {
+        "first": {
+          "tag": "Capítulo I",
+          "title": "Pétalos Etéreos",
+          "description": "Inspirada en la belleza efímera de la primavera, esta colección captura el delicado latido de la vida vegetal. Cada pieza cuenta con una única flor seleccionada a mano, preservada para siempre en un abrazo cristalino.",
+          "types": {
+            "minerals": "Plata bañada en oro",
+            "ingredients": "Ingredientes botánicos conservados"
+          },
+          "button": "Explorar Pétalos Etéreos"
+        },
+        "second": {
+          "tag": "Capítulo II",
+          "title": "Profundidades Oceánicas",
+          "description": "Los pigmentos azul cerúleo intenso se entremezclan con capas translúcidas para imitar el movimiento rítmico de la marea. Una colección diseñada para quienes encuentran la paz en la inmensidad del mar.",
+          "characteristics": {
+            "made": "Elaborado artesanalmente",
+            "resistance": "UV resistente",
+            "typo": "Remolinos únicos"
+          },
+          "button": "Explorar Profundidades Oceánicas"
+        }
+      }
+    },
+    "info_cards": {
+      "first": {
+        "title": "Calidad artesanal",
+        "description": "Resina que no amarillea y ofrece una gran transparencia, que protege la integridad de tus piezas durante años."
+      },
+      "second": {
+        "title": "Eco",
+        "description": "Ingredientes botánicos procedentes de huertos locales sostenibles y utilizamos componentes de resina de origen biológico."
+      },
+      "third": {
+        "title": "Único en su género",
+        "description": "Dado que la resina se vierte a mano, no hay dos piezas que sean idénticas."
+      }
+    }
+  },
+
   "about": {
     "title": "Sobre el Estudio",
     "body": "Cada pieza comienza como una idea — un color, una sensación, una textura encontrada en la naturaleza. Vertimos, curamos y terminamos cada artículo a mano en nuestro pequeño estudio."
