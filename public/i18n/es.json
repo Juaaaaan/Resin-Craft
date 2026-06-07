@@ -76,6 +76,13 @@
     }
   },
 
+  "care": {
+    "title_section": {
+      "title": "Tiempos de cuidado y elaboración artesanal",
+      "subtitle": "El arte requiere paciencia y dedicación. Cada pieza es un viaje que va desde la resina líquida hasta convertirse en un tesoro que se puede llevar puesto."
+    }
+  },
+
   "about": {
     "title": "Sobre el Estudio",
     "body": "Cada pieza comienza como una idea — un color, una sensación, una textura encontrada en la naturaleza. Vertimos, curamos y terminamos cada artículo a mano en nuestro pequeño estudio."

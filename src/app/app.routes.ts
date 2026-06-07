@@ -17,6 +17,12 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/collections/collections').then((m) => m.Collections),
       },
+
+      {
+        path: 'cuidados',
+        pathMatch: 'full',
+        loadComponent: () => import('./features/health-care/health-care').then((m) => m.HealthCare),
+      },
     ],
   },
   { path: '**', redirectTo: '' },
