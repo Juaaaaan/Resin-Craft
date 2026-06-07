@@ -1,19 +1,9 @@
 <ng-container *transloco="let t" id="rc-collections">
-  <div class="flex flex-col items-center justify-center bg-surface-container-low p-16">
-    <div class="text-h4 font-serif text-on-surface mb-md">
-      <h4>{{ t('collections.title_section.series') }}</h4>
-    </div>
-    <div>
-      <h2 class="text-h2 font-serif text-on-surface mb-md">
-        {{ t('collections.title_section.title') }}
-      </h2>
-    </div>
-    <div>
-      <i class="text-on-surface font-light mb-md">
-        {{ t('collections.title_section.subtitle') }}
-      </i>
-    </div>
-  </div>
+  <app-intro-page-section
+    [title]="t('collections.title_section.title')"
+    [description]="t('collections.title_section.subtitle')"
+    [season]="t('collections.title_section.series')"
+  ></app-intro-page-section>
   <app-hero-collections></app-hero-collections>
   <app-info-cards></app-info-cards>
 </ng-container>

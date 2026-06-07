@@ -76,6 +76,13 @@
     }
   },
 
+  "care": {
+    "title_section": {
+      "title": "Care & Handcrafting Times",
+      "subtitle": "Artistry requires patience and intentionality. Each piece is a journey from liquid resin to a wearable treasure."
+    }
+  },
+
   "about": {
     "title": "About the Studio",
     "body": "Every piece begins as an idea — a color, a feeling, a texture found in nature. We pour, cure, and finish each item by hand in our small studio."
