@@ -11,6 +11,7 @@
     "lint": "ng lint",
     "prepare": "husky || true",
     "precommit": "npm run lint && npm run test:coverage",
+    "doc:graph": "graphify update .",
     "serve:ssr:Resin-Craft-Art": "node dist/Resin-Craft-Art/server/server.mjs"
   },
   "prettier": {
