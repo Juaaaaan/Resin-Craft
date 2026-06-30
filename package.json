@@ -12,6 +12,7 @@
     "prepare": "husky || true",
     "precommit": "npm run lint && npm run test:coverage",
     "doc:graph": "graphify update .",
+    "doc:graph:obsidian": "graphify . --obsidian",
     "serve:ssr:Resin-Craft-Art": "node dist/Resin-Craft-Art/server/server.mjs"
   },
   "prettier": {
