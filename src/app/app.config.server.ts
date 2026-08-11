@@ -1,4 +1,5 @@
 import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { provideServerRendering, withRoutes } from '@angular/ssr';
 import { provideTranslocoLoader } from '@jsverse/transloco';
 import { appConfig } from './app.config';
@@ -7,6 +8,7 @@ import { TranslocoSsrLoader } from './core/services/transloco/transloco-ssr-load
 
 const serverConfig: ApplicationConfig = {
   providers: [
+    provideNoopAnimations(),
     provideServerRendering(withRoutes(serverRoutes)),
     provideTranslocoLoader(TranslocoSsrLoader),
   ],

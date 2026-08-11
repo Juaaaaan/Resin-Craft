@@ -24,9 +24,18 @@
     "empty": "Tu carrito está vacío.",
     "continueShopping": "Seguir Comprando",
     "subtotal": "Subtotal",
+    "shipping": "Envío",
+    "selectShipping": "Seleccionar envío",
+    "total": "Total",
     "checkout": "Proceder al Pago",
     "remove": "Eliminar",
-    "quantity": "Cant."
+    "quantity": "Cant.",
+    "close": "Cerrar carrito"
+  },
+  "shipping": {
+    "ordinary": "Correo ordinario",
+    "certified": "Correo certificado",
+    "pickup": "Recogida en persona"
   },
 
   "collections": {

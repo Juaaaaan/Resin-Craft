@@ -24,9 +24,18 @@
     "empty": "Your cart is empty.",
     "continueShopping": "Continue Shopping",
     "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "selectShipping": "Select shipping",
+    "total": "Total",
     "checkout": "Proceed to Checkout",
     "remove": "Remove",
-    "quantity": "Qty"
+    "quantity": "Qty",
+    "close": "Close cart"
+  },
+  "shipping": {
+    "ordinary": "Standard mail",
+    "certified": "Certified mail",
+    "pickup": "In-person pickup"
   },
 
   "collections": {
