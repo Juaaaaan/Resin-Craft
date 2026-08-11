@@ -1,0 +1,161 @@
+@if (isOpen()) {
+  <!-- Backdrop -->
+  <div
+    class="fixed inset-0 bg-on-surface/30 z-40 transition-opacity duration-300"
+    role="button"
+    tabindex="0"
+    (click)="close()"
+    (keydown.enter)="close()"
+  ></div>
+
+  <!-- Drawer panel -->
+  <div
+    class="fixed right-0 top-0 h-full w-100 max-w-[85vw] bg-surface z-50 border-l border-outline-variant flex flex-col"
+    @slideDrawer
+  >
+    <!-- Header -->
+    <div class="flex items-center justify-between px-md py-sm border-b border-outline-variant">
+      <h2 class="text-h3 font-serif text-on-surface">{{ 'cart.title' | transloco }}</h2>
+      <button
+        class="text-on-surface-variant hover:text-on-surface transition-colors duration-300"
+        (click)="close()"
+        [attr.aria-label]="'common.close' | transloco"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    @if (cartService.items().length === 0) {
+      <!-- Empty state -->
+      <div class="flex-1 flex items-center justify-center px-md">
+        <p class="text-body-md font-sans text-on-surface-variant text-center">
+          {{ 'cart.empty' | transloco }}
+        </p>
+      </div>
+    } @else {
+      <!-- Cart items -->
+      <div class="flex-1 overflow-y-auto px-md py-sm">
+        @for (item of cartService.items(); track item.product.id) {
+          <div class="flex gap-sm py-sm border-b border-outline-variant/40">
+            <div class="flex-1">
+              <p class="text-body-md font-sans text-on-surface font-medium">
+                {{ item.product.name }}
+              </p>
+              <p class="text-body-md font-sans text-on-surface-variant">
+                {{ item.product.price | currency: 'EUR' }}
+              </p>
+            </div>
+
+            <div class="flex items-center gap-xs">
+              <button
+                class="w-8 h-8 flex items-center justify-center border border-outline-variant rounded text-on-surface hover:bg-surface-container-low transition-colors duration-300"
+                (click)="decrement(item.product.id, item.quantity)"
+                [attr.aria-label]="'cart.quantity' | transloco"
+              >
+                −
+              </button>
+              <span class="text-body-md font-sans text-on-surface w-8 text-center">
+                {{ item.quantity }}
+              </span>
+              <button
+                class="w-8 h-8 flex items-center justify-center border border-outline-variant rounded text-on-surface hover:bg-surface-container-low transition-colors duration-300"
+                (click)="increment(item.product.id, item.quantity)"
+                [attr.aria-label]="'cart.quantity' | transloco"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="flex flex-col items-end justify-between">
+              <p class="text-body-md font-sans text-on-surface font-medium">
+                {{ item.product.price * item.quantity | currency: 'EUR' }}
+              </p>
+              <button
+                class="text-label-sm font-sans text-on-surface-variant hover:text-error transition-colors duration-300"
+                (click)="remove(item.product.id)"
+              >
+                {{ 'cart.remove' | transloco }}
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Shipping selector -->
+      <div class="px-md py-sm border-t border-outline-variant">
+        <p class="text-label-sm font-sans font-semibold tracking-label uppercase text-on-surface-variant mb-xs">
+          {{ 'cart.shipping' | transloco }}
+        </p>
+        @for (option of shippingService.options; track option.method) {
+          <label class="flex items-center gap-xs py-xs cursor-pointer">
+            <input
+              type="radio"
+              name="shipping"
+              [value]="option.method"
+              [checked]="cartService.shipping() === option.method"
+              (change)="selectShipping(option.method)"
+              class="accent-primary"
+            />
+            <span class="text-body-md font-sans text-on-surface flex-1">
+              {{ option.label | transloco }}
+            </span>
+            <span class="text-body-md font-sans text-on-surface-variant">
+              {{ option.price | currency: 'EUR' }}
+            </span>
+          </label>
+        }
+      </div>
+
+      <!-- Totals -->
+      <div class="px-md py-sm border-t border-outline-variant">
+        <div class="flex justify-between mb-xs">
+          <span class="text-body-md font-sans text-on-surface-variant">
+            {{ 'cart.subtotal' | transloco }}
+          </span>
+          <span class="text-body-md font-sans text-on-surface">
+            {{ cartService.total() | currency: 'EUR' }}
+          </span>
+        </div>
+        <div class="flex justify-between mb-xs">
+          <span class="text-body-md font-sans text-on-surface-variant">
+            {{ 'cart.shipping' | transloco }}
+          </span>
+          <span class="text-body-md font-sans text-on-surface">
+            @if (shippingCost() !== null) {
+              {{ shippingCost() | currency: 'EUR' }}
+            } @else {
+              {{ 'cart.selectShipping' | transloco }}
+            }
+          </span>
+        </div>
+        <div class="flex justify-between pt-xs border-t border-outline-variant">
+          <span class="text-body-md font-sans text-on-surface font-semibold">
+            {{ 'cart.total' | transloco }}
+          </span>
+          <span class="text-body-md font-sans text-on-surface font-semibold">
+            {{ grandTotal() | currency: 'EUR' }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Checkout button -->
+      <div class="px-md py-sm">
+        <button
+          class="w-full bg-on-surface text-surface rounded px-sm py-xs transition-all duration-300 hover:opacity-90 text-label-sm font-sans font-semibold tracking-label uppercase"
+          (click)="checkout.emit()"
+        >
+          {{ 'cart.checkout' | transloco }}
+        </button>
+      </div>
+    }
+  </div>
+}

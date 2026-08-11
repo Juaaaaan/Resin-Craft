@@ -27,10 +27,10 @@
 
     <!-- Acciones -->
     <div class="flex items-center gap-4">
-      <!-- Icono carrito (por implementar en fase 4) -->
       <button
         class="text-on-surface hover:text-primary transition-colors duration-300"
         aria-label="Carrito de compra"
+        (click)="cartClick.emit()"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
