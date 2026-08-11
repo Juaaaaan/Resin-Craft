@@ -88,13 +88,31 @@
     "body": "Cada pieza comienza como una idea — un color, una sensación, una textura encontrada en la naturaleza. Vertimos, curamos y terminamos cada artículo a mano en nuestro pequeño estudio."
   },
   "contact": {
-    "title": "Contáctanos",
-    "name": "Nombre",
+    "title": "Let's connect",
+    "subtitle": "Escríbenos sin prisa — cada mensaje se lee con calma, como se hace cada pieza.",
+    "name": "Nombre completo",
     "email": "Correo electrónico",
+    "subject": "Asunto",
+    "subjectOptions": {
+      "customCommission": "Encargo Personalizado",
+      "orderInquiry": "Consulta sobre un pedido",
+      "wholesale": "Venta al por mayor",
+      "press": "Prensa / Colaboración",
+      "other": "Otro"
+    },
     "message": "Mensaje",
     "send": "Enviar Mensaje",
     "success": "¡Gracias! Nos pondremos en contacto pronto.",
-    "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "legalNotice": "Tu pedido no se confirma hasta que hablemos y se reciba el pago.",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "emailLink": "Escríbenos por correo",
+    "studioLocation": "Ubicación del estudio",
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "email": "Introduce un correo electrónico válido.",
+      "minLength": "Este campo es demasiado corto."
+    }
   },
   "common": {
     "loading": "Cargando…",

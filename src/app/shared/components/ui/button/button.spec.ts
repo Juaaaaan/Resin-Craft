@@ -40,6 +40,10 @@ describe('ButtonComponent', () => {
     it('should default type to "button"', () => {
       expect(component.type()).toBe('button');
     });
+
+    it('should default fullWidth to false', () => {
+      expect(component.fullWidth()).toBeFalse();
+    });
   });
 
   describe('classes getter', () => {
@@ -88,6 +92,15 @@ describe('ButtonComponent', () => {
       const classes = component.classes();
       expect(classes).toContain('px-xl');
       expect(classes).toContain('py-md');
+    });
+
+    it('should not include w-full by default', () => {
+      expect(component.classes()).not.toContain('w-full');
+    });
+
+    it('should include w-full when fullWidth is set', () => {
+      fixture.componentRef.setInput('fullWidth', true);
+      expect(component.classes()).toContain('w-full');
     });
   });
 
