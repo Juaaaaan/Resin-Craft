@@ -23,6 +23,12 @@ export const routes: Routes = [
         pathMatch: 'full',
         loadComponent: () => import('./features/health-care/health-care').then((m) => m.HealthCare),
       },
+
+      {
+        path: 'contacto',
+        pathMatch: 'full',
+        loadComponent: () => import('./features/contact/contact').then((m) => m.Contact),
+      },
     ],
   },
   { path: '**', redirectTo: '' },

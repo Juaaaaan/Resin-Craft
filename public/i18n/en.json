@@ -88,13 +88,31 @@
     "body": "Every piece begins as an idea — a color, a feeling, a texture found in nature. We pour, cure, and finish each item by hand in our small studio."
   },
   "contact": {
-    "title": "Get in Touch",
-    "name": "Name",
-    "email": "Email",
+    "title": "Let's connect",
+    "subtitle": "Write to us without rush — every message is read slowly, the way every piece is made.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "subjectOptions": {
+      "customCommission": "Custom Commission",
+      "orderInquiry": "Order Inquiry",
+      "wholesale": "Wholesale",
+      "press": "Press / Collaboration",
+      "other": "Other"
+    },
     "message": "Message",
     "send": "Send Message",
     "success": "Thank you! We'll be in touch soon.",
-    "error": "Something went wrong. Please try again."
+    "error": "Something went wrong. Please try again.",
+    "legalNotice": "Your order is not confirmed until we talk and payment is received.",
+    "whatsapp": "Message us on WhatsApp",
+    "emailLink": "Email us",
+    "studioLocation": "Studio Location",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "minLength": "This field is too short."
+    }
   },
   "common": {
     "loading": "Loading…",
