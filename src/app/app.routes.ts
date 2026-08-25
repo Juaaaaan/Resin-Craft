@@ -25,6 +25,12 @@ export const routes: Routes = [
       },
 
       {
+        path: 'stock',
+        pathMatch: 'full',
+        loadComponent: () => import('./features/stock/stock').then((m) => m.Stock),
+      },
+
+      {
         path: 'contacto',
         pathMatch: 'full',
         loadComponent: () => import('./features/contact/contact').then((m) => m.Contact),
