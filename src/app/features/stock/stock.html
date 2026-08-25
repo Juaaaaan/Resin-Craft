@@ -1,0 +1,53 @@
+<section class="py-xl">
+  <div class="max-w-[1200px] mx-auto px-gutter">
+    <header class="text-center mb-lg">
+      <span
+        class="text-label-sm font-sans font-semibold tracking-label uppercase text-on-surface-variant mb-sm inline-block"
+      >
+        Colección disponible
+      </span>
+      <h1 class="text-h1 font-serif tracking-h1 text-on-surface">Stock</h1>
+    </header>
+
+    @if (isLoading()) {
+      <div class="flex justify-center items-center py-xl">
+        <div
+          class="w-8 h-8 border-2 border-outline-variant border-t-primary rounded-full animate-spin"
+        ></div>
+      </div>
+    } @else if (items().length === 0) {
+      <div class="text-center py-xl">
+        <p class="text-body-lg font-sans text-on-surface-variant">
+          No hay piezas disponibles en este momento.
+        </p>
+        <p class="text-body-md font-sans text-on-surface-variant mt-sm">
+          Vuelve pronto o solicita un encargo personalizado.
+        </p>
+      </div>
+    } @else {
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        @for (item of items(); track item.id) {
+          <app-product-card [product]="item.product" [stockStatus]="item.status" />
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<section class="py-xl bg-surface-container">
+  <div class="max-w-[1200px] mx-auto px-gutter text-center">
+    <h2 class="text-h2 font-serif tracking-h2 text-on-surface mb-md">
+      ¿Buscas algo único?
+    </h2>
+    <p class="text-body-lg font-sans text-on-surface-variant mb-lg max-w-[600px] mx-auto">
+      Cada pieza puede ser personalizada según tus preferencias. Cuéntanos tu idea y crearemos algo
+      exclusivo para ti.
+    </p>
+    <a
+      routerLink="/contacto"
+      class="bg-on-surface text-surface rounded px-sm py-xs transition-all duration-300 hover:opacity-90 inline-block"
+    >
+      SOLICITAR ENCARGO
+    </a>
+  </div>
+</section>
