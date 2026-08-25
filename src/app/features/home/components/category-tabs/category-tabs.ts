@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { CategoryTab } from '../../models/category.model';
 import { RouterLink } from '@angular/router';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal/scroll-reveal';
 
 @Component({
   selector: 'app-category-tabs',
-  imports: [RouterLink],
+  imports: [RouterLink, ScrollRevealDirective],
   templateUrl: './category-tabs.html',
   styleUrl: './category-tabs.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

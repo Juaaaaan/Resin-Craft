@@ -3,10 +3,11 @@ import { ProductsService } from '../../../../core/services/products/products.ser
 import { Product } from '../../../../shared/models/products/products.model';
 import { MAGIC_NUMBERS } from '../../../../shared/consts/numbers/numbers.const';
 import { ProductCard } from "../../../../shared/components/product-card/product-card";
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal/scroll-reveal';
 
 @Component({
   selector: 'app-featured-products',
-  imports: [ProductCard],
+  imports: [ProductCard, ScrollRevealDirective],
   templateUrl: './featured-products.html',
   styleUrl: './featured-products.scss',
 })
