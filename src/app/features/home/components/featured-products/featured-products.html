@@ -40,7 +40,14 @@
     @if (!loading() && !error() && products().length > 0) {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg">
         @for (product of products(); track product.id; let i = $index) {
-          <app-product-card [product]="product" [isNew]="i === 0" (addToBag)="onAddToBag($event)" />
+          <app-product-card
+            [product]="product"
+            [isNew]="i === 0"
+            (addToBag)="onAddToBag($event)"
+            appScrollReveal
+            direction="up"
+            [delay]="i * 100"
+          />
         }
       </div>
     }
