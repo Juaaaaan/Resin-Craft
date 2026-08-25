@@ -1,28 +1,30 @@
 <article class="flex flex-col group cursor-pointer">
-  <!-- Imagen -->
   <div class="aspect-4/5 bg-surface-container mb-md relative overflow-hidden">
-    <!-- {{ product() | json}} -->
-    @if (imageUrl) {
+    @if (isBrowser() && imageUrl()) {
       <img
-        [src]="imageUrl"
+        [ngSrc]="imageUrl()"
         [alt]="product().name"
-        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        fill
+        class="object-cover transition-transform duration-500 group-hover:scale-105"
       />
     } @else {
-      <!-- Placeholder sin imagen -->
       <div class="w-full h-full flex items-center justify-center bg-surface-container-high">
         <span class="font-label-sm text-on-surface-variant/40 uppercase">Sin imagen</span>
       </div>
     }
 
-    <!-- Badge NEW -->
     @if (isNew()) {
       <div class="absolute top-sm right-sm">
         <app-badge variant="primary" size="sm">NEW</app-badge>
       </div>
     }
 
-    <!-- Add to bag — aparece en hover -->
+    @if (stockBadge(); as badge) {
+      <div class="absolute top-sm left-sm">
+        <app-badge [variant]="badge.variant" size="sm">{{ badge.label }}</app-badge>
+      </div>
+    }
+
     @if (showAddBag()) {
       <button
         class="absolute bottom-0 w-full py-sm bg-on-surface text-white font-label-sm translate-y-full group-hover:translate-y-0 transition-transform duration-300 hover:bg-primary"
@@ -33,15 +35,19 @@
     }
   </div>
 
-  <!-- Info -->
   <h4 class="font-h3 text-on-surface mb-xs">{{ product().name }}</h4>
+
+  @if (product().collection) {
+    <span class="text-label-sm font-sans font-semibold tracking-label uppercase text-on-surface-variant mb-xs">
+      {{ product().collection!.name }}
+    </span>
+  }
 
   <div class="flex justify-between items-center">
     <span class="font-body-md text-on-surface-variant">
       {{ product().price | currency: 'EUR' : 'symbol' : '1.2-2' : 'es' }}
     </span>
 
-    <!-- Colores — swatches de las imágenes si hay varias -->
     @if (product().images.length > 1) {
       <div class="flex gap-1">
         @for (img of product().images.slice(0, 3); track img.url) {

@@ -51,8 +51,17 @@ export class ProductsService {
   }
 
   getPrimaryImage(product: Product): string {
-    return (
-      product.images.find((i) => i.is_primary)?.url ?? product.images[MAGIC_NUMBERS.ZERO]?.url ?? ''
+    console.log(
+      product.images.find((i) => i.is_primary)?.url ??
+        product.images[MAGIC_NUMBERS.ZERO]?.url ??
+        ''.split('?')[0],
     );
+
+    const imgProduct =
+      product.images.find((i) => i.is_primary)?.url ??
+      product.images[MAGIC_NUMBERS.ZERO]?.url ??
+      '';
+
+    return imgProduct.includes('?token') ? imgProduct.split('?')[0] : imgProduct;
   }
 }
